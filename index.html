@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Dynamic Quiz App</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<img src="img/header.jpg" class="header-img" alt="Header Image" />
+
+  <!-- Loader Overlay -->
+  <div id="loaderWrapper"><div class="loader"></div></div>
+
+  <!-- Name Screen -->
+  <div id="nameScreen" class="screen active">
+    <h3 id="quizTitle" class="screen-title">Dynamic Quiz</h3>
+    <h2>Enter Your Name</h2>
+    <input type="text" id="userName" placeholder="Your Name" />
+    <button onclick="goToAge()">Next</button>
+    <div class="bottom-center">SMALL STEPS BIG RESULTS </div>
+  </div>
+
+  <!-- Age Screen -->
+  <div id="ageScreen" class="screen">
+    <h2>Enter Your Age</h2>
+    <input type="number" id="userAge" placeholder="Your Age" />
+    <div class="nav-buttons">
+      <button onclick="backToName()">Back</button>
+      <button onclick="goToEducation()">Next</button>
+    </div>
+    <div class="bottom-center">SMALL STEPS BIG RESULTS </div>
+  </div>
+
+  <!-- Education Screen -->
+  <div id="eduScreen" class="screen">
+    <h2>Select Education</h2>
+    <p class="subtext">Please select one option from below</p>
+    <div class="options-box">
+      <div class="option-btn" onclick="selectEdu('School')">School (Class 1-12)</div>
+      <div class="option-btn" onclick="selectEdu('Graduation')">Graduation</div>
+      <div class="option-btn" onclick="selectEdu('Post Graduation')">Post Graduation</div>
+      <div class="option-btn" onclick="selectEdu('PhD')">PhD</div>
+      <!-- New Sections -->
+      <div class="option-btn" onclick="selectEdu('Coding')">Coding</div>
+      <div class="option-btn" onclick="selectEdu('Analytical')">Analytical Skills</div>
+      <div class="option-btn" onclick="selectEdu('Grammar Practice')">Grammar Practice</div>
+      <div class="option-btn" onclick="selectEdu('All Subjects')">All Subjects / General Knowledge</div>
+    </div>
+    <div class="nav-buttons">
+      <button onclick="backToAge()">Back</button>
+    </div>
+  </div>
+
+  <!-- Stream Screen -->
+  <div id="streamScreen" class="screen">
+    <h2 id="streamTitle">Select Stream</h2>
+    <p class="subtext">Please select one option from below</p>
+    <div class="options-box" id="streamOptions"></div>
+    <div class="nav-buttons">
+      <button onclick="backToEdu()">Back</button>
+    </div>
+  </div>
+
+  <!-- Quiz Screen -->
+  <div id="quizScreen" class="screen">
+    <h2 id="quizHeader"></h2>
+    <div class="question" id="questionText"></div>
+    <div class="answers" id="answers"></div>
+    <div id="feedback"></div>
+    <div class="nav-buttons">
+      <button id="backBtn" onclick="prevQuestion()">Back</button>
+      <button id="nextBtn" onclick="nextQuestion()">Next</button>
+    </div>
+    <button onclick="submitQuiz()">Submit</button>
+  </div>
+
+<div id="resultScreen" class="screen">
+  <div class="result-card">
+    <h2>🎉 Quiz Completed! 🎉</h2>
+    <div id="result"></div>
+    <button onclick="restartQuiz()">Try Again </button>
+  </div>
+</div>
+
+<div id="msgContainer" class="message-popup"></div>
+
+ <script src="script.js"></script>
+</body>
+</html>
