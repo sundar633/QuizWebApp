@@ -1,0 +1,2 @@
+Here You need key to get questions and options and answers from AI for that you need api key : avilable at :
+openrouter platform signup and login get api key and url insert in java code (line 101,102) then it will work 
